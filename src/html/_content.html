@@ -1,0 +1,89 @@
+<div class="app__wrapper">
+	<div class="app__content">
+		<div class="background-setting">
+			<img data-src="@img/bg-desktop-dark.jpg" alt="">
+		</div>
+		<div class="taskManager__wrapper">
+			<div class="taskManager__content">
+				<div class="content__header">
+					<div class="header-title">
+						<h1>To do</h1>
+					</div>
+					<div class="header-theme">
+						<img data-src="@img/icon-sun.svg" alt="">
+					</div>
+				</div>
+				<div class="content__form-control">
+					<ul class="tasks task-control">
+						<li>
+							<form class="task-form">
+								<input type="text"
+								class="task-input"
+								placeholder="e.g. go to gym"
+								autocomplete="off">
+								<button type="submit">Create</button>
+							</form>
+						</li>
+						<div class="form-alert"></div>
+					</ul>
+				</div>
+				<div class="content__form-result">
+					<p class="loading-text">Loading...</p>
+					<ul class="tasks">
+						<li>
+							<div class="task-info">
+								<div class="task-status">
+									<input id="checkbox" type="checkbox">
+									<label for="checkbox">
+										<div class="radio-check checked"></div>
+									</label>
+									<img class="checked" src="@img/icon-check.svg" alt="">
+								</div>
+								<div class="task-title checked">
+									Learn something new
+								</div>
+							</div> 
+							<div class="delete-task">
+								<img src="@img/icon-cross.svg" alt="">
+							</div>
+						</li>
+						<li>
+							<div class="task-info">
+								<div class="task-status">
+									<input id="checkbox" type="checkbox">
+									<label for="checkbox">
+										<div class="radio-check"></div>
+									</label>
+									<img src="@img/icon-check.svg" alt="">
+								</div>
+								<div class="task-title">
+									Don't eat much callories
+								</div>
+							</div>
+							<div class="delete-task">
+								<img src="@img/icon-cross.svg" alt="">
+							</div>
+						</li>
+						<li>
+							<div class="task-info">
+								<div class="task-status">
+									<input id="checkbox" type="checkbox">
+									<label for="checkbox">
+										<div class="radio-check"></div>
+									</label>
+									<img src="@img/icon-check.svg" alt="">
+								</div>
+								<div class="task-title">
+									Read ten pages
+								</div>
+							</div>
+							<div class="delete-task">
+								<img src="@img/icon-cross.svg" alt="">
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
