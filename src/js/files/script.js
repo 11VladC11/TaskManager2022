@@ -76,3 +76,24 @@ formDOM.addEventListener('click', async(e)=>{
 	},3000)
 })
 
+const closeTaskEdit = document.querySelector('.close-task-edit');
+const contentEdit = document.querySelector('.content-task-edit')
+const taskEdit = document.querySelector('.task-edit');
+taskEdit.addEventListener('click',()=>{
+		contentEdit.classList.add('hidden')
+})
+closeTaskEdit.addEventListener('click',()=>{
+		contentEdit.classList.remove('hidden')
+})
+const taskstatus = document.querySelector('.task-status .task-edit-completed ');
+taskstatus.addEventListener('click',()=>{
+	if(!taskstatus.checked == true){
+		document.querySelector('.edit-task .radio-check').classList.remove('checked');
+		document.querySelector('.edit-task img').classList.remove('checked')
+
+	}else{
+		document.querySelector('.edit-task .radio-check').classList.add('checked');
+		document.querySelector('.edit-task img').classList.add('checked')
+	}
+})
+
