@@ -95,13 +95,131 @@
 						color: $VeryLightGray;
 						padding: 0.5rem;
 						letter-spacing: 1px;
-						opacity: 0;
+						visibility: hidden;
 					}
 					ul{
 						li{
 							border-bottom: 1px solid $VeryDarkGrayishBlue;
 							display: flex;
 							justify-content: space-between;
+							.singular-control{
+								display: flex;
+								.edit-task{
+									margin-right: 1.2rem;
+									button{
+										font-family: JosefinSansItalic;
+									}
+									.content-task-edit{
+										border-radius: 3px;
+										z-index: 2;
+										left: 50%;
+										top: 55%;
+										padding: 3rem 3rem 3rem 3rem ;
+										transform: translate(-50%,-40%);
+										position: absolute;
+										background-color: $VeryDarkDesaturatedBluePopup;
+											@include adaptiveValue("width", 900, 500, 1920, 800, 1);
+											
+											@media (max-width: 799px) {
+												@include adaptiveValue("width", 600, 310, 799, 320, 1);
+											
+											}
+											.task-edit-btn{
+												width: 100%;
+												padding: 0.5rem 1rem;
+												border-radius: 300px;
+												margin-top: 3rem;
+												border: 1px solid $VeryLightGray;
+											}
+											.single-task-form h4 {
+												font-family: JosefinSans;
+												text-align: center;
+												margin-bottom: 2rem;
+											}
+											
+											.single-task-form p {
+												margin-bottom: 0;
+												margin-top: 0;
+											}
+											
+											.single-task-form .form-control {
+												display: grid;
+												grid-template-columns: 150px 1fr;
+												justify-items: start;
+												margin-bottom: 2rem;
+												width: 100%;
+											}
+											
+											.single-task-form label {
+												margin-bottom: 0;
+												font-size: 1rem;
+											}
+											
+											.task-edit-completed {
+												width: auto;
+											}
+											
+											.close-task-edit{
+												position: absolute;
+												top: 1rem;
+												right: 1rem;
+												cursor: pointer;
+												
+											}
+											.task-edit-name{
+												outline: none;
+												border: 1px solid $VeryLightGray;
+												background-color: $VeryDarkDesaturatedBlue;
+												border-radius: 3px;
+												color: $VeryLightGray;
+												padding: 0.5rem;
+											}
+											.task-status {
+												position: relative;
+											
+												&:hover .radio-check {
+													border: 1px solid #C058F3;
+												}
+											
+												input {
+													cursor: pointer;
+													position: relative;
+													z-index: 1;
+													opacity: 0;
+												}
+											
+												.radio-check {
+													position: absolute;
+													left: 50%;
+													top: 50%;
+													transform: translate(-50%, -60%);
+													height: 1.3rem;
+													width: 1.3rem;
+													border-radius: 30rem;
+													border: 1px solid $VeryLightGray;
+													&.checked {
+														background: linear-gradient(#57DDFF, #C058F3);
+														border: none;
+													}
+											
+												}
+											
+												img {
+													position: absolute;
+													left: 50%;
+													top: 50%;
+													transform: translate(-50%, -60%);
+													height: 0.6rem;
+													display: none;
+											
+													&.checked {
+														display: block;
+													}
+												}
+											}
+									}
+								}
+							}
 							.task-info{
 								display: flex;
 								.task-status{

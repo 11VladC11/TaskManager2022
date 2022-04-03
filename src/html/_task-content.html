@@ -24,7 +24,7 @@
 					</div>
 					<div class="content__form-result">
 						<p class="loading-text">Loading...</p>
-						<ul class="tasks">
+						<ul class="tasks all-tasks">
 							<li>
 								<div class="task-info">
 									<div class="task-status">
@@ -38,8 +38,46 @@
 										Learn something new
 									</div>
 								</div>
-								<div class="delete-task">
-									<img src="@img/icon-cross.svg" alt="">
+								<div class="singular-control">
+
+									<div class="edit-task">
+										<button class="task-edit">Edit</button>
+										<div class="content-task-edit">
+											<form class="single-task-form">
+												<h4>Edit Task</h4>
+												<div class="form-control">
+													<label>Task ID</label>
+													<p class="task-edit-id">6249a06af5354105dc2ced55</p>
+												</div>
+												<div class="form-control">
+													<label for="name">Name</label>
+													<input type="text" name="name" class="task-edit-name" autocomplete="off" />
+												</div>
+												<div class="form-control">
+													<label for="completed">Completed</label>
+													<div class="task-status">
+														<input id="checkbox" type="checkbox" name="completed" class="task-edit-completed">
+														<label for="checkbox">
+															<div class="radio-check"></div>
+														</label>
+														<img src="@img/icon-check.svg" alt="">
+													</div>
+												</div>
+													<button type="submit" class="block btn task-edit-btn">Edit task</button>
+
+												<div class="form-alert"></div>
+											</form>
+											<div class="close-task-edit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+												<path fill="#ffffff" fill-rule="evenodd"
+													d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z" />
+											</svg></div>
+										</div>
+									</div>
+									<div class="delete-task">
+										<button type="button" class="delete-btn" >
+											<img src="@img/icon-cross.svg" alt="">
+										</button>
+									</div>
 								</div>
 							</li>
 							<li>
@@ -55,8 +93,16 @@
 										Don't eat much callories
 									</div>
 								</div>
-								<div class="delete-task">
-									<img src="@img/icon-cross.svg" alt="">
+								<div class="singular-control">
+								
+									<div class="edit-task">
+										<button class="task-edit">Edit</button>
+									</div>
+									<div class="delete-task">
+										<button type="button" class="delete-btn">
+											<img src="@img/icon-cross.svg" alt="">
+										</button>
+									</div>
 								</div>
 							</li>
 							<li>
@@ -72,8 +118,16 @@
 										Read ten pages
 									</div>
 								</div>
-								<div class="delete-task">
-									<img src="@img/icon-cross.svg" alt="">
+								<div class="singular-control">
+								
+									<div class="edit-task">
+										<button class="task-edit">Edit</button>
+									</div>
+									<div class="delete-task">
+										<button type="button" class="delete-btn">
+											<img src="@img/icon-cross.svg" alt="">
+										</button>
+									</div>
 								</div>
 							</li>
 						</ul>
