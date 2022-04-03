@@ -1,0 +1,106 @@
+<div class="taskManager__wrapper">
+	<div class="taskManager__content">
+		<div class="content__header">
+			<div class="header-title">
+				<h1>To do</h1>
+			</div>
+			<div class="header-theme">
+				<img data-src="@img/icon-sun.svg" alt="">
+			</div>
+		</div>
+		<div data-tabs class="tabs">
+			<div data-tabs-body class="tabs__content">
+				<div class="tabs__body first-tab">
+					<div class="content__form-control">
+						<ul class="tasks task-control">
+							<li>
+								<form class="task-form">
+									<input type="text" class="task-input" placeholder="e.g. go to gym" autocomplete="off">
+									<button type="submit">Create</button>
+								</form>
+							</li>
+							<div class="form-alert"></div>
+						</ul>
+					</div>
+					<div class="content__form-result">
+						<p class="loading-text">Loading...</p>
+						<ul class="tasks">
+							<li>
+								<div class="task-info">
+									<div class="task-status">
+										<input id="checkbox" type="checkbox">
+										<label for="checkbox">
+											<div class="radio-check checked"></div>
+										</label>
+										<img class="checked" src="@img/icon-check.svg" alt="">
+									</div>
+									<div class="task-title checked">
+										Learn something new
+									</div>
+								</div>
+								<div class="delete-task">
+									<img src="@img/icon-cross.svg" alt="">
+								</div>
+							</li>
+							<li>
+								<div class="task-info">
+									<div class="task-status">
+										<input id="checkbox" type="checkbox">
+										<label for="checkbox">
+											<div class="radio-check"></div>
+										</label>
+										<img src="@img/icon-check.svg" alt="">
+									</div>
+									<div class="task-title">
+										Don't eat much callories
+									</div>
+								</div>
+								<div class="delete-task">
+									<img src="@img/icon-cross.svg" alt="">
+								</div>
+							</li>
+							<li>
+								<div class="task-info">
+									<div class="task-status">
+										<input id="checkbox" type="checkbox">
+										<label for="checkbox">
+											<div class="radio-check"></div>
+										</label>
+										<img src="@img/icon-check.svg" alt="">
+									</div>
+									<div class="task-title">
+										Read ten pages
+									</div>
+								</div>
+								<div class="delete-task">
+									<img src="@img/icon-cross.svg" alt="">
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tabs__body">
+					Rewards page
+				</div>
+				<div class="tabs__body">
+					Motivation page
+				</div>
+				<div class="tabs__body">
+					Your history page
+				</div>
+			</div>
+			<div  class="task-navigation">
+				<div class="task-left"><span id="hmany">3</span> items left</div>
+				<nav data-tabs-titles data-da=".task-mobile-navigation,800" class="tabs__navigation">
+					<button type="button" class="tabs__title _tab-active">All</button>
+					<button type="button" class="tabs__title">Rewards</button>
+					<button type="button" class="tabs__title">Motivation</button>
+					<button type="button" class="tabs__title">Your Life</button>
+				</nav>
+				<div class="clear-completed"><button>Clear Completed</button></div>
+			</div>
+			<div class="task-mobile-navigation"></div>
+		</div>
+		
+	</div>
+</div>

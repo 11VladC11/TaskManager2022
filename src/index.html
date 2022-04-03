@@ -7,8 +7,18 @@
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
 			<main class="page">
-			@@include('html/_content.html',{})
-		
+				<div class="app__wrapper">
+					<div class="app__content">
+						<div class="background-setting">
+							<img data-src="@img/bg-desktop-dark.jpg" alt="">
+						</div>
+
+						
+						@@include('html/_task-content.html',{})
+
+
+					</div>
+				</div>
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
