@@ -196,6 +196,9 @@
 						}
 						}
 						.task-mobile-navigation{
+							@media (min-width:801px) {
+								display: none;
+							}
 							margin-top: 1rem;
 							width: 100%;
 							text-align: center;
