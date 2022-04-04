@@ -1,4 +1,5 @@
 // Подключение функционала "Чертогов Фрилансера"
+// import { task } from "gulp";
 import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
@@ -8,7 +9,6 @@ const loadingDOM = document.querySelector('.loading-text');
 const formDOM = document.querySelector('.task-form');
 const taskInputDOM = document.querySelector('.task-input');
 const formAlertDOM = document.querySelector('.form-alert');
-const taskCompletedDOM = document.querySelector('#checkbox')
 const showTask = async ()=>{
 	loadingDOM.style.visibility = 'visible';
 	try{
@@ -97,3 +97,64 @@ taskstatus.addEventListener('click',()=>{
 	}
 })
 
+
+//edit task
+
+const taskIDDOM = document.querySelector('.task-edit-id');
+const taskNameDOM = document.querySelector('task-edit-name');
+const taskCompletedDOM =  document.querySelector('.task-edit-completed');
+const editFormDOM = document.querySelector('.single-task-form');
+const editBtnDOM = document.querySelector('.task-edit-btn');
+const editAlertDOM = document.querySelector('.edit-alert');
+const params = window.location.search;
+const id = new URLSearchParams(params).get('id');
+let tempName;
+
+const showEditTask = async () =>{
+	try{
+		const {data:{task},} =await axios.get(`/api/v1/tasks/${id}`)
+		const {_id:taskID,completed,name} = task;
+		taskIDDOM.textContent=taskID
+		taskNameDOM.value = name
+		tempName = name
+		if(completed){
+			taskCompletedDOM.checked = true;
+		} 
+	
+	} catch(error){
+		console.log(error)
+	}
+}
+showEditTask();
+editFormDOM.addEventListener('submit',async (e)=>{
+	editBtnDOM.textContent = 'Loading...'
+	e.preventDefault();
+	try{
+		const taskName = taskNameDOM.value;
+		const taskCompleted = taskCompletedDOM.checked
+		const {data:{task},} = await axios.patch('/api/v1/tasks/${id}',{
+			name:taskName,
+			completed: taskCompleted,
+		})
+		const {_id:taskID,completed,name} = task;
+		taskIDDOM.textContent = taskID
+		taskNameDOM.value = name
+		tempName = name
+		if(completed){
+			taskCompletedDOM.checked = true;
+		}
+		editAlertDOM.style.display ='block';
+		editAlertDOM.textContent= 'succes, edited task';
+		editAlertDOM.classList.add('text-success')
+	} catch (error){
+		console.error(error)
+		taskNameDOM.value = tempName
+		editAlertDOM.style.display ='block'
+		editAlertDOM.innerHTML = 'error, please try again' 
+	}
+	editBtnDOM.textContent = 'Edit'
+	setTimeout(()=>{
+		editAlertDOM.style.display = 'none'
+		editAlertDOM.classList.remove('text-success')
+	},3000)
+})
