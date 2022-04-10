@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Task Manager: Edit Task"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<div class="app__wrapper">
+				<div class="app__content">
+					<div class="background-setting">
+						<img data-src="@img/bg-desktop-dark.jpg" alt="">
+					</div>
+					<div class="edit-singular-task-container">
+
+						<div class="content-task-edit">
+							<form class="single-task-form">
+								<h4>Edit Task</h4>
+								<div class="form-control">
+									<label>Task ID</label>
+									<p class="task-edit-id">6249a06af5354105dc2ced55</p>
+								</div>
+								<div class="form-control">
+								<label for="name">Name</label>
+								<input type="text" name="name" class="task-edit-name" autocomplete="off" />
+							</div>
+							<div class="form-control">
+								<label for="completed">Completed</label>
+								<div class="task-status">
+									<input id="checkbox tec" type="checkbox" name="completed" class="task-edit-completed">
+									<label for="checkbox">
+										<div class="radio-check "></div>
+									</label>
+									<img src="@img/icon-check.svg" alt="">
+								</div>
+							</div>
+							<button type="submit" class="block btn task-edit-btn">Edit task</button>
+					
+							<div class="edit-alert"></div>
+						</form>
+						<button class="block btn task-edit-btn back-link">
+							
+							<a href="index.html" class="btn back-link">Back to tasks</a>
+						</button>
+					</div> 
+					
+				</div>
+			</div>
+		</div>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>
